@@ -12,7 +12,7 @@ Sentry is a simple node tool to watch for file changes (using a path, wildcards,
 var sentry = require('sentry2');
 
 // Watch changes in file.js
-sentry.watch('file.js', function (filename) {console.log("A change has been made in " + filename);});
+sentry.watch('file.js', function (error, filename) {console.log("A change has been made in " + filename);});
 
 // Watch changes on any file ending in .coffee one directory deep
 sentry.watch('fld/*.coffee', callback);
@@ -33,16 +33,16 @@ Sentry comes with two methods `watch` and `watchRegExp`.
 
 ### sentry.watch(filePath, [task], callback)
 
-When running a child process you may optionally pass a callback with the arguments `(err, stdout, stderr)`
+When running a child process you may optionally pass a callback with the arguments `(error, filename, stdout, stderr)`
 
 ````javascript
-sentry.watch('file.js', 'coffee -c', function (err, stdout, stderr) {/*...*/});
+sentry.watch('file.js', 'coffee -c', function (error, filename, stdout, stderr) {/*...*/});
 ````
 
 Or just pass a callback and Sentry will pass the filename to the callback
 
 ````javascript
-sentry.watch('file.js', function (filename) {/*...*/});
+sentry.watch('file.js', function (error, filename) {/*...*/});
 ````
 
 Feel free to use wildcards with extensions
