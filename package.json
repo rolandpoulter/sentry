@@ -1,33 +1,19 @@
 {
-  "name": "sentry",
-  "version": "0.1.2",
-  "author": "Craig Spaeth <craigspaeth@gmail.com> (http://craigspaeth.com)",
+  "name": "sentry2",
+  "version": "0.2.0",
   "description": "Watch files (using a path, wildcards, or a regex) and execute a function or shell command.",
-  "keywords": [
-    "watch",
-    "watchr",
-    "guard",
-    "wildcards",
-    "recursive"
+  "homepage": "http://github.com/rolandpoulter/sentry",
+  "main": "./sentry.js",
+  "keywords": ["watch", "watcher", "watchr", "guard", "wildcards", "recursive", "directory"],
+  "contributors": [
+    {"name": "Craig Spaeth", "email": "craigspaeth@gmail.com", "web": "http://craigspaeth.com"},
+    {"name": "Roland Poulter", "web": "http://github.com/rolandpoulter"}
   ],
+  "dependencies": {"file": "0.2.1"},
+  "devDependencies": {"mocha": "1.8.1"},
+  "scripts": {"test": "mocha ./test/sentry_test.js"},
   "repository": {
     "type": "git",
-    "url": "git://github.com/craigspaeth/sentry.git"
-  },
-  "dependencies": {
-    "coffee-script": "*",
-    "underscore": "*",
-    "file": "*"
-  },
-  "devDependencies": {
-    "jasmine-node": "*"
-  },
-  "main": "lib/sentry",
-  "scripts": {
-    "install": "cake build",
-    "test": "jasmine-node spec --coffee"
-  },
-  "engines": {
-    "node": "*"
+    "url": "git://github.com/rolandpoulter/sentry.git"
   }
 }
